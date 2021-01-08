@@ -18,4 +18,14 @@ public class BuildingObjectServiceImpl implements BuildingObjectService {
     public List<BuildingObjectDto> findAllBuildingObjects() {
         return asList(new BuildingObjectDto(), new BuildingObjectDto());
     }
+
+    @Override
+    public BuildingObjectDto updateBuildingObject(BuildingObjectDto buildingObject) {
+        return null;
+    }
+
+    @Override
+    public BuildingObjectDto findBuildingObject(String objectId) {
+        return null;
+    }
 }

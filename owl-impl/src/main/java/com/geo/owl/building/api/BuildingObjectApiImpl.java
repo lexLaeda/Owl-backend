@@ -5,10 +5,12 @@ import com.geo.owl.building.service.BuildingObjectService;
 import com.geo.owl.common.ApiProxy;
 import com.geo.owl.common.ApiResult;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Slf4j
 @Component
 @RequiredArgsConstructor
 public class BuildingObjectApiImpl implements BuildingObjectApi {
