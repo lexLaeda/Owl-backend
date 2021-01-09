@@ -4,11 +4,13 @@ import com.geo.owl.common.exception.OwlBackendException;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import lombok.val;
+import org.springframework.stereotype.Component;
 
 import java.util.function.Supplier;
 
-@Slf4j
 @Data
+@Slf4j
+@Component
 public class ApiProxy {
 
     private static final String OWL_EXCEPTION_MSG = "";
