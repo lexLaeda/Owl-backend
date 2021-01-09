@@ -3,7 +3,11 @@ package com.geo.owl.controllers;
 import com.geo.owl.building.dto.BuildingObjectDto;
 import com.geo.owl.building.service.BuildingObjectService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -20,7 +24,7 @@ public class BuildingObjectController {
     }
 
     @GetMapping("/get")
-    public List<BuildingObjectDto> findAllBuildingObjects(){
+    public List<BuildingObjectDto> findAllBuildingObjects() {
         return objectService.findAllBuildingObjects();
     }
 }

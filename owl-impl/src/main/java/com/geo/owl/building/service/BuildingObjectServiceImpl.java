@@ -14,7 +14,7 @@ import static java.util.Arrays.asList;
 public class BuildingObjectServiceImpl implements BuildingObjectService {
 
     @PostConstruct
-    public void init(){
+    public void init() {
         log.info("Ура!!!!!");
     }
 
