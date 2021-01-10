@@ -9,11 +9,11 @@ import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 
 import javax.sql.DataSource;
 
-@Configuration
+@Configuration(proxyBeanMethods = false)
 public class DataSourceConfig {
 
     @Bean
-    public DataSourceInitializer dataSourceInitializer(
+    public static DataSourceInitializer dataSourceInitializer(
             @Qualifier("dataSource") final DataSource dataSource
     ) {
         ResourceDatabasePopulator resourceDatabasePopulator = new ResourceDatabasePopulator();
@@ -23,4 +23,5 @@ public class DataSourceConfig {
         dataSourceInitializer.setDatabasePopulator(resourceDatabasePopulator);
         return dataSourceInitializer;
     }
+
 }
