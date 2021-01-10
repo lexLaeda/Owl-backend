@@ -1,13 +1,3 @@
-DROP TABLE IF EXISTS address;
-CREATE TABLE address
-(
-    object_id VARCHAR(255) PRIMARY KEY,
-    city      VARCHAR(255),
-    street    VARCHAR(255),
-    house     VARCHAR(255),
-    lock      BIGINT DEFAULT 0
-);
-
 DROP TABLE IF EXISTS building_objects;
 CREATE TABLE building_objects
 (
@@ -17,6 +7,16 @@ CREATE TABLE building_objects
     end_date   TIMESTAMP,
     address    VARCHAR(255),
     lock       BIGINT DEFAULT 0
+);
+
+DROP TABLE IF EXISTS address;
+CREATE TABLE address
+(
+    object_id VARCHAR(255) PRIMARY KEY,
+    city      VARCHAR(255),
+    street    VARCHAR(255),
+    house     VARCHAR(255),
+    lock      BIGINT DEFAULT 0
 );
 
 ALTER TABLE building_objects
@@ -52,8 +52,8 @@ ALTER TABLE work_areas
     ADD CONSTRAINT FK_WORK_AREAS_2WORK_AREA_TYPES
         FOREIGN KEY (work_area_type) REFERENCES work_area_types (code);
 
-DROP TABLE IF EXISTS point_types;
-CREATE TABLE point_types
+DROP TABLE IF EXISTS base_point_types;
+CREATE TABLE base_point_types
 (
     code    VARCHAR(255) PRIMARY KEY,
     name_ru VARCHAR(255),
@@ -61,55 +61,58 @@ CREATE TABLE point_types
     lock    BIGINT DEFAULT 0
 );
 
-DROP TABLE IF EXISTS points;
-CREATE TABLE points
+DROP TABLE IF EXISTS base_points;
+CREATE TABLE base_points
 (
-    object_id    VARCHAR(255) PRIMARY KEY,
-    point_type   VARCHAR(255),
-    x            DOUBLE PRECISION,
-    y            DOUBLE PRECISION,
-    h            DOUBLE PRECISION,
-    version      BIGINT,
-    created      TIMESTAMP,
-    last_updated TIMESTAMP,
-    work_area_id VARCHAR(255),
-    lock         BIGINT DEFAULT 0
+    object_id       VARCHAR(255) PRIMARY KEY,
+    name            VARCHAR(255),
+    base_point_type VARCHAR(255),
+    x               DOUBLE PRECISION,
+    y               DOUBLE PRECISION,
+    h               DOUBLE PRECISION,
+    version         BIGINT,
+    created         TIMESTAMP,
+    last_updated    TIMESTAMP,
+    work_area_id    VARCHAR(255),
+    lock            BIGINT DEFAULT 0
 );
 
-ALTER TABLE points
+ALTER TABLE base_points
     ADD CONSTRAINT FK_POINTS_2_WORK_AREAS
         FOREIGN KEY (work_area_id) REFERENCES work_areas (object_id);
 
-ALTER TABLE points
+ALTER TABLE base_points
     ADD CONSTRAINT FK_POINTS_2_POINT_TYPES
-        FOREIGN KEY (point_type) REFERENCES point_types (code);
+        FOREIGN KEY (base_point_type) REFERENCES base_point_types (code);
 
 DROP TABLE IF EXISTS pint_histories;
-CREATE TABLE point_histories
+CREATE TABLE base_point_histories
 (
     object_id        VARCHAR(255) PRIMARY KEY,
-    point_type       VARCHAR(255),
+    name             VARCHAR(255),
+    base_point_type  VARCHAR(255),
     x                DOUBLE PRECISION,
     y                DOUBLE PRECISION,
     h                DOUBLE PRECISION,
     version          BIGINT,
     measurement_date TIMESTAMP,
-    point_id         VARCHAR(255),
+    base_point_id    VARCHAR(255),
     lock             BIGINT DEFAULT 0
 );
 
-ALTER TABLE point_histories
+ALTER TABLE base_point_histories
     ADD CONSTRAINT FK_POINT_HISTORIES_2_POINTS
-        FOREIGN KEY (point_id) REFERENCES points (object_id);
+        FOREIGN KEY (base_point_id) REFERENCES base_points (object_id);
 
-ALTER TABLE point_histories
+ALTER TABLE base_point_histories
     ADD CONSTRAINT FK_POINT_HISTORIES_2_POINT_TYPES
-        FOREIGN KEY (point_type) REFERENCES point_types (code);
+        FOREIGN KEY (base_point_type) REFERENCES base_point_types (code);
 
 DROP TABLE IF EXISTS elevation_marks;
 CREATE TABLE elevation_marks
 (
     object_id           VARCHAR(255) PRIMARY KEY,
+    name                VARCHAR(255),
     elevation_mark_type VARCHAR(255),
     h                   DOUBLE PRECISION,
     version             BIGINT,
@@ -140,6 +143,7 @@ DROP TABLE IF EXISTS elevation_mark_histories;
 CREATE TABLE elevation_mark_histories
 (
     object_id           VARCHAR(255) PRIMARY KEY,
+    name                VARCHAR(255),
     elevation_mark_type VARCHAR(255),
     h                   DOUBLE PRECISION,
     version             BIGINT,
