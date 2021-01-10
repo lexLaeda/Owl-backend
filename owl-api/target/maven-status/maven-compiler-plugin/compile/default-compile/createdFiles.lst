@@ -1,7 +1,0 @@
-com\geo\owl\building\dto\justification\PointDto.class
-com\geo\owl\building\dto\BuildingObjectDto.class
-com\geo\owl\building\dto\justification\BenchmarkDto.class
-com\geo\owl\building\api\BuildingObjectApi.class
-com\geo\owl\building\dto\WorkSiteDto.class
-com\geo\owl\common\ApiResult.class
-com\geo\owl\building\dto\AddressDto.class
