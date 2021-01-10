@@ -22,8 +22,8 @@ npm-debug.log.*
 */target/**
 **/META-INF/
 !.mvn/wrapper/maven-wrapper.jar
-*/.mvn/**
-/.mvn/
+*/.mvn/wrapper/**
+/.mvn/wrapper/
 
 ### STS ###
 .apt_generated
