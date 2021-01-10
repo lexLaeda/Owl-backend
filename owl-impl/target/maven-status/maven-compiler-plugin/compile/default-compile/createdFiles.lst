@@ -1,5 +1,6 @@
-com\geo\owl\building\service\BuildingObjectServiceImpl.class
 com\geo\owl\building\api\BuildingObjectApiImpl.class
-com\geo\owl\common\exception\OwlBackendException.class
+com\geo\owl\building\model\Address.class
 com\geo\owl\building\service\BuildingObjectService.class
+com\geo\owl\building\service\BuildingObjectServiceImpl.class
+com\geo\owl\common\exception\OwlBackendException.class
 com\geo\owl\common\ApiProxy.class
