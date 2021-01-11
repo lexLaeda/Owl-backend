@@ -12,5 +12,5 @@ public interface BuildingObjectApi {
 
     ApiResult<BuildingObjectDto> findBuildingObject(String objectId);
 
-    ApiResult<List<BuildingObjectDto>> findAllBuildingObject(BuildingObjectDto buildingObject);
+    ApiResult<List<BuildingObjectDto>> findAllBuildingObject();
 }

@@ -34,9 +34,7 @@ public class BuildingObjectApiImpl implements BuildingObjectApi {
     }
 
     @Override
-    public ApiResult<List<BuildingObjectDto>> findAllBuildingObject(
-            BuildingObjectDto buildingObject
-    ) {
+    public ApiResult<List<BuildingObjectDto>> findAllBuildingObject() {
         return proxy.proceed(service::findAllBuildingObjects);
     }
 
