@@ -5,6 +5,7 @@ import com.geo.owl.building.model.BuildingObject;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -56,7 +57,7 @@ public class BuildingObjectConverter {
                 .collect(Collectors.toSet());
     }
 
-    public List<BuildingObjectDto> convert(Set<BuildingObject> buildingObjects) {
+    public List<BuildingObjectDto> convert(Collection<BuildingObject> buildingObjects) {
         if (isEmpty(buildingObjects)) {
             return emptyList();
         }

@@ -11,11 +11,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
 import static java.time.LocalDateTime.now;
-import static java.util.Collections.emptyList;
 import static java.util.Collections.emptySet;
 import static java.util.Collections.singleton;
 import static java.util.Collections.singletonList;
@@ -107,7 +108,7 @@ public class BuildingObjectConverterTest {
 
     @Test
     public void convertNullEmptyCollections() {
-        assertNotNull(converter.convert(emptyList()));
+        assertNotNull(converter.convert(new ArrayList<BuildingObject>()));
         assertNotNull(converter.convert((List<BuildingObjectDto>) null));
         assertNotNull(converter.convert(emptySet()));
         assertNotNull(converter.convert((Set<BuildingObject>) null));
