@@ -150,3 +150,11 @@ ALTER TABLE elevation_mark_histories
 ALTER TABLE elevation_mark_histories
     ADD CONSTRAINT FK_ELEVATION_MARK_HISTORIES_2_ELEVATION_MARKS
         FOREIGN KEY (elevation_mark_id) REFERENCES elevation_marks (object_id);
+
+INSERT INTO base_point_types (code,name_ru,name_en)
+VALUES ('REFLECTING_STAMP','Отражающая марка','Reflecting stamp'),
+       ('POLIGONOMETRIC_SIGN','Полигонометрический знак','Poligonometric sign'),
+       ('TRIANGULATION_POINT','Триангуляционный пункт','Triangulation point'),
+       ('TEMPORARY_POINT','Временная точка','Temporary point'),
+       ('BOUNDARY_SIGN','Межевой знак','Boundary sign'),
+       ('WALL_STAMP','Настенная марка','Wall stamp');

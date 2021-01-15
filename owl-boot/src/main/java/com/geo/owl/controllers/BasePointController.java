@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/building_objects")
+@RequestMapping("/base_points")
 public class BasePointController {
 
     private final BasePointApi api;
