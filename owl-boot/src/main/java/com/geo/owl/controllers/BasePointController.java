@@ -21,4 +21,5 @@ public class BasePointController {
     public ApiResult<BasePointDto> updateBasePoint(@RequestBody BasePointDto dto) {
         return api.updateBasePoint(dto);
     }
+
 }
