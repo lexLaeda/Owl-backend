@@ -31,7 +31,7 @@ public class BuildingObjectConverter {
                 .setName(dto.getName())
                 .setStartDate(dto.getStartDate())
                 .setEndDate(dto.getEndDate())
-                .setAddress(addressConverter.convert(dto.getAddress()))
+               .setAddress(addressConverter.convert(dto.getAddress()))
                 .setWorkAreas(workAreaConverter.convert(dto.getWorkAreas()));
     }
 

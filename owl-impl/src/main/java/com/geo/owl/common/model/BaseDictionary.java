@@ -17,5 +17,5 @@ public abstract class BaseDictionary {
     private String nameEn;
 
     @Version
-    private int lock;
+    private long lock;
 }

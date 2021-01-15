@@ -118,7 +118,7 @@ public class BuildingObjectConverterTest {
         return new BuildingObject()
                 .setObjectId(OBJECT_ID)
                 .setName(NAME)
-                .setAddress(address)
+                //.setAddress(address)
                 .setWorkAreas(singleton(workArea))
                 .setStartDate(START_DATE)
                 .setEndDate(END_DATE);

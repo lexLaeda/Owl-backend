@@ -29,5 +29,5 @@ public class ElevationMarkHistory {
     private String elevationMarkId;
 
     @Version
-    private int lock;
+    private long lock;
 }

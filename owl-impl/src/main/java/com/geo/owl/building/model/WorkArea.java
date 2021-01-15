@@ -40,5 +40,5 @@ public class WorkArea {
     private Set<ElevationMark> elevationMarks = new HashSet<>();
 
     @Version
-    private int lock;
+    private long lock;
 }

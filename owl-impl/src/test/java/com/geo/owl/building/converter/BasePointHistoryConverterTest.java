@@ -95,7 +95,7 @@ public class BasePointHistoryConverterTest {
         return new BasePointHistory()
                 .setObjectId(OBJECT_ID)
                 .setName(NAME)
-                .setPointType(POINT_TYPE)
+                .setBasePointType(POINT_TYPE)
                 .setX(X)
                 .setY(Y)
                 .setH(H)
