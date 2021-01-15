@@ -10,10 +10,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
-@Data
+
 @Entity
 @Accessors(chain = true)
 @Table(name = "address")
+@Data
 public class Address {
 
     @Id
@@ -22,9 +23,8 @@ public class Address {
     private String objectId;
     private String city;
     private String street;
-    private String address;
     private String house;
 
     @Version
-    private int lock;
+    private long lock;
 }

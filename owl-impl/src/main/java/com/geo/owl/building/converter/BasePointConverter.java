@@ -29,7 +29,7 @@ public class BasePointConverter {
                 .setH(dto.getH())
                 .setCreated(dto.getCreated())
                 .setLastUpdated(dto.getLastUpdated())
-                .setPointType(dto.getPointType())
+                .setBasePointType(dto.getPointType())
                 .setVersion(dto.getVersion());
     }
 
@@ -45,7 +45,7 @@ public class BasePointConverter {
                 .setH(basePoint.getH())
                 .setCreated(basePoint.getCreated())
                 .setLastUpdated(basePoint.getLastUpdated())
-                .setPointType(basePoint.getPointType())
+                .setPointType(basePoint.getBasePointType())
                 .setVersion(basePoint.getVersion());
     }
 

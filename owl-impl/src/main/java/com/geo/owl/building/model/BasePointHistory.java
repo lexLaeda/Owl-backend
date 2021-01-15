@@ -21,7 +21,7 @@ public class BasePointHistory {
     @GenericGenerator(name = "base_point_histories_uuid2", strategy = "uuid2")
     public String objectId;
     private String name;
-    private String pointType;
+    private String basePointType;
     private Double x;
     private Double y;
     private Double h;
@@ -30,5 +30,5 @@ public class BasePointHistory {
     private String basePointId;
 
     @Version
-    private int lock;
+    private long lock;
 }

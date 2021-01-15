@@ -23,7 +23,7 @@ public class BasePoint {
     @GenericGenerator(name = "points_uuid2", strategy = "uuid2")
     private String objectId;
     private String name;
-    private String pointType;
+    private String basePointType;
     private Double x;
     private Double y;
     private Double h;
@@ -34,5 +34,5 @@ public class BasePoint {
     private Timestamp lastUpdated;
 
     @Version
-    private int lock;
+    private long lock;
 }

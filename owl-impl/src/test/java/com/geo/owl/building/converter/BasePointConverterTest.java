@@ -96,7 +96,7 @@ public class BasePointConverterTest {
                 .setObjectId(OBJECT_ID)
                 .setName(NAME)
                 .setVersion(VERSION)
-                .setPointType(POINT_TYPE)
+                .setBasePointType(POINT_TYPE)
                 .setCreated(CREATED)
                 .setLastUpdated(LAST_UPDATED)
                 .setX(X)

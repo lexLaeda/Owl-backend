@@ -40,5 +40,5 @@ public class BuildingObject {
     private Set<WorkArea> workAreas = new HashSet<>();
 
     @Version
-    private int lock;
+    private long lock;
 }

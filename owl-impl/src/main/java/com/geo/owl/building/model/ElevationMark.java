@@ -32,5 +32,5 @@ public class ElevationMark {
     private Timestamp lastUpdated;
 
     @Version
-    private int lock;
+    private long lock;
 }

@@ -22,7 +22,7 @@ public class BasePointHistoryConverter {
         }
         return new BasePointHistory()
                 .setObjectId(dto.getObjectId())
-                .setPointType(dto.getPointType())
+                .setBasePointType(dto.getPointType())
                 .setName(dto.getName())
                 .setMeasurementDate(dto.getMeasurementDate())
                 .setBasePointId(dto.getBasePointId())
@@ -38,7 +38,7 @@ public class BasePointHistoryConverter {
         }
         return new BasePointHistoryDto()
                 .setObjectId(history.getObjectId())
-                .setPointType(history.getPointType())
+                .setPointType(history.getBasePointType())
                 .setName(history.getName())
                 .setMeasurementDate(history.getMeasurementDate())
                 .setBasePointId(history.getBasePointId())
